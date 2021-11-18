@@ -1,2 +1,3 @@
 # Software-Engineer-Team
-Welcome
+in the server folder, you can run: 
+### nodemon server
