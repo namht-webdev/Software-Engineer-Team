@@ -1,0 +1,19 @@
+{
+  "name": "codeex",
+  "version": "1.0.0",
+  "description": "this project for learing software engineer",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "learn",
+    "code"
+  ],
+  "author": "sw team",
+  "license": "ISC",
+  "devDependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.15"
+  }
+}
