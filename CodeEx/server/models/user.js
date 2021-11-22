@@ -5,9 +5,11 @@ const Schema = mongoose.Schema;
 const UserSchema = new Schema({
     username: {type: String, required: true, unique: true},
     password: {type: String, required: true},
+    name: {type:String, required: true},
     avatar: {type: String, default: ''},
     email: {type: String, default: ''},
     country:{type: String, default: ''},
+    gender: {type: String, default: ''}
 },
 {
     timestamps: true
