@@ -17,4 +17,4 @@ const UserSchema = new Schema({
 
 UserSchema.plugin(mongoose_delete, {overrideMethods: 'all'});
 
-module.exports = mongoose.model('User', UserSchema);
+module.exports = mongoose.model('user', UserSchema);
