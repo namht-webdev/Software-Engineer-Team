@@ -17,5 +17,8 @@
     "mongoose": "^6.0.13",
     "mongoose-delete": "^0.5.4",
     "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "argon2": "^0.28.2"
   }
 }
