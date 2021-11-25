@@ -16,6 +16,4 @@ const PostSchema = new Schema({
 })
 
 PostSchema.plugin(mongoose_delete, {overrideMethods: 'all'});
-
-
 module.exports = mongoose.model('Post', PostSchema);

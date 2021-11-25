@@ -1,12 +1,12 @@
-const Follow = require('../models/follow');
+const Vote = require('../models/vote');
 
-class FollowController{
+class VoteController{
     async index(req, res, next) {
         const {userId, postId} = { ...req.params };
         try {
-            const followedPosts = await Follow.find({userId, postId}).leand();
-            if(followedPosts){
-                return res.json({success: true, followedPosts});
+            const votedPosts = await Vote.find({userId, postId}).leand();
+            if(votedPosts){
+                return res.json({success: true, votedPosts});
             }
             return res.status(404).json({success: false, message:'Model has not been created!'});
         } catch (error) {
@@ -14,21 +14,21 @@ class FollowController{
         }
     }
 
-    async follow(req, res, next) {
+    async vote(req, res, next) {
         const {userId, postId} = { ...req.params};
         try {
-            const newFollow = new Follow({userId, postId});
-            await newFollow.save();
+            const newVote = new Vote({userId, postId});
+            await newVote.save();
             return res.status(200).json({success: true});
         } catch (error) {
             return res.status(500).json({success: false, message: 'Internal Server Error'});
         }
     }
 
-    async unfollow(req, res, next){
+    async unVote(req, res, next){
         const {userId, postId} = { ...req.params};
         try {
-            await Follow.deleteOne({userId, postId});
+            await Vote.deleteOne({userId, postId});
             return res.status(200).json({ success: true});
         } catch (error) {
             return res.status(500).json({success: false, message: 'Internal Server Error'});
@@ -37,4 +37,4 @@ class FollowController{
 
 }
 
-module.exports = new FollowController;
+module.exports = new VoteController;
