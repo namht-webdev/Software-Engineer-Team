@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const router = require('./routes/index');
 const Connection = require('./models/index');
+require('dotenv').config();
 
 const PORT = 5000;
 app.use(express.json());
