@@ -13,12 +13,17 @@
   "author": "sw team",
   "license": "ISC",
   "devDependencies": {
+    "bcrypt": "^5.0.1",
     "express": "^4.17.1",
+    "googleapis": "^91.0.0",
     "mongoose": "^6.0.13",
     "mongoose-delete": "^0.5.4",
+    "nodemailer": "^6.7.2",
     "nodemon": "^2.0.15"
   },
   "dependencies": {
-    "argon2": "^0.28.2"
+    "argon2": "^0.28.2",
+    "dotenv": "^10.0.0",
+    "jsonwebtoken": "^8.5.1"
   }
 }
