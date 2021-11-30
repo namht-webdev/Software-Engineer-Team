@@ -1,4 +1,4 @@
-const Post = require('../models/post');
+const Post = require('../models/postModel');
 
 class PostController {
     index(req, res, next) {

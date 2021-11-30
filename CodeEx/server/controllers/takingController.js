@@ -1,4 +1,4 @@
-const Taking = require('../models/taking');
+const Taking = require('../models/takingModel');
 
 class TakingController {
 

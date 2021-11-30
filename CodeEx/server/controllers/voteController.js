@@ -1,4 +1,4 @@
-const Vote = require('../models/vote');
+const Vote = require('../models/voteModel');
 
 class VoteController{
     async index(req, res, next) {
