@@ -1,6 +1,6 @@
-const siteController = require('../controllers/singleSites');
-const userRoute = require('./user');
-const postRoute = require('./post');
+const siteController = require('../controllers/singleSitesController');
+const userRoute = require('./userRoute');
+const postRoute = require('./postRoute');
 
 function routes(app) {
     app.get('/', siteController.index)
