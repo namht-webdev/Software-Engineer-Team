@@ -4,7 +4,7 @@ const router = require('./routes/indexRoute');
 const Connection = require('./models/indexModel');
 const cookieParser = require('cookie-parser');
 require('dotenv').config();
-
+ 
 const PORT = 5000;
 app.use(express.json());
 Connection();
