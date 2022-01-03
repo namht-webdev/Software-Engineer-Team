@@ -1,0 +1,11 @@
+#home{
+    flex: 1;
+}
+.container:first{
+    margin-top: 20px;
+}
+.container{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
