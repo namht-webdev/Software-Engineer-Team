@@ -10,7 +10,8 @@ const UserSchema = new Schema({
     avatar: { type: String, default: 'https://res.cloudinary.com/dxo2m1hlx/image/upload/v1637922613/icon/user-32_lg945e.png' },
     email: { type: String, required: true},
     country: { type: String, default: '' },
-    gender: { type: String, default: '' }
+    gender: { type: String, default: 'Male' },
+    isBlock: { type: Boolean, default: false}
 },
     {
         timestamps: true
