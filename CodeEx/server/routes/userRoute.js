@@ -17,7 +17,7 @@ router.patch('/reset-password', verifyUser, UserController.resetPassword);
 
 // Admin
 
-router.post('/block', verifyUser, verifyAmind, UserController.blockUser);
-
+router.post('/block', verifyUser, UserController.blockUser);
+router.post('/unblock', verifyUser, verifyAmind, UserController.unblockUser);
 
 module.exports = router;

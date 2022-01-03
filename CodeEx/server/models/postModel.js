@@ -3,7 +3,7 @@ const mongoose_delete = require('mongoose-delete');
 const Schema = mongoose.Schema;
 
 const PostSchema = new Schema({
-    userPost: {type: String, required: true},
+    userId: {type: String, required: true},
     title: {type: String, required: true},
     dayStart: {type: Date, default: Date.now()},
     dayEnd: {type: Date},

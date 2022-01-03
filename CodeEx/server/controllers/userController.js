@@ -84,8 +84,8 @@ class UserController {
             if (!validPassword) {
                 return res.status(400).json({ message: 'Ypur password incorrect!' });
             }
-            if(user.deleted){
-                return res.json({message: 'Your account has been blocked!'})
+            if (user.deleted) {
+                return res.json({ message: 'Your account has been blocked!' })
             }
 
             const refreshToken = createRefreshToken({ id: user._id });
@@ -153,17 +153,34 @@ class UserController {
     async blockUser(req, res) {
         try {
             const { email } = req.body;
-            const user = await User.findOne({ email });
+            const user = await User.findOneWithDeleted({ email });
             if (!user) {
-                return res.status(400).json({ message: 'This email address is not exists!'});
+                return res.status(400).json({ message: 'This email address is not exists!' });
             }
 
-            if(user.deleted){
-                return res.status(400).json({ message: 'This email has been blocked!'});
+            if (user.deleted) {
+                return res.status(400).json({ message: 'This email has been blocked!' });
             }
 
             await user.delete();
-            return res.json({ message: "This user is blocked!"});
+            return res.json({ message: "This user is blocked!" });
+        } catch (error) {
+            return res.status(500).json({ error: error.message });
+        }
+    }
+
+    async unblockUser(req, res) {
+        try {
+            const { email } = req.body;
+            if (!validateEmail(email)) {
+                return res.status(400).json({ message: 'Invalid email!' });
+            }
+            const user = await User.findOneWithDeleted({ email });
+            if(!user) {
+                return res.status(400).json({ message: 'This user is not blocked!'});
+            }
+            await user.restore();
+            return res.status(200).json({ message: 'This email is unblock!'});
         } catch (error) {
             return res.status(500).json({ error: error.message });
         }

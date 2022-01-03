@@ -6,12 +6,12 @@ class PostController {
     }
 
     async create(req, res, next) {
-        const { userPost, title, type } = { ...req.body };
+        const { userId, title, type } = { ...req.body };
         try {
             if(!title || !type) {
                 return res.status(403).json({success: false, message: 'You have to enter a title and type of this challenge'});
             }
-            const newPost = new Post({userPost, title, type});
+            const newPost = new Post({userId, title, type});
             await newPost.save();
             return res.status(200).json({success: true, message: 'Your challenge is created successfully'});
         } catch (error) {

@@ -5,7 +5,7 @@ const fileSubmitSchema = new Schema({
     userId: {type: Schema.Types.ObjectId, required: true},
     postId: {type: Schema.Types.ObjectId, required: true},
     file : {type: String},
-    createdAt: {type: Date}
+    daySubmit: {type: Date}
 })
 
 module.exports = mongoose.model('submitFile', fileSubmitSchema);

@@ -7,6 +7,7 @@ const verifyUser = async (req, res, next) => {
         jwt.verify(accessToken, process.env.ACCESS_TOKEN_SECRET, (err, user) => {
             if(err) return res.status(400).json({ success: false, message: 'Please login again!' });
             req.user = user;
+            
         });
         next();
     } catch (error) {
