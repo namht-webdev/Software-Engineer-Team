@@ -1,27 +1,37 @@
 import React from "react";
 import ChallengeCard from "../../components/challengecard/ChallengeCard";
+import Footer from "../../components/footer/Footer";
 import Navbar from "../../components/navbar/Navbar";
 import './home.css'
 function Home() {
-    return(
+    return (
         <div id="home">
-            <Navbar/>
+            <Navbar />
             <div className="container">
                 <div className="row">
-                    <ChallengeCard/>
-                    <ChallengeCard/>
-                    <ChallengeCard/>
-                    <ChallengeCard/>
+                    <ChallengeCard />
+                    <ChallengeCard />
+                    <ChallengeCard />
+                    <ChallengeCard />
                 </div>
             </div>
             <div className="container">
                 <div className="row">
-                    <ChallengeCard/>
-                    <ChallengeCard/>
-                    <ChallengeCard/>
-                    <ChallengeCard/>
+                    <ChallengeCard />
+                    <ChallengeCard />
+                    <ChallengeCard />
+                    <ChallengeCard />
                 </div>
             </div>
+            <div className="container">
+                <div className="row">
+                    <ChallengeCard />
+                    <ChallengeCard />
+                    <ChallengeCard />
+                    <ChallengeCard />
+                </div>
+            </div>
+            <Footer />
         </div>
     )
 }

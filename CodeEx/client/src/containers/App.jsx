@@ -5,13 +5,10 @@ import Home from "./home/Home";
 import Homepage from "./homepage/Homepage";
 
 function App() {
-    return(
+    return (
         <div>
-            {/* <Navbar />,
-            <Homepage />,
-            <Footer /> */}
-            <Home/>,
-            <Footer/>
+            <Homepage />
+            {/* <Home/> */}
         </div>
     )
 }
