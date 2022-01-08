@@ -12,14 +12,14 @@ function Footer() {
                     <div>
                         <span>Copyright 2021 CodeEx</span>
                         <br />
-                        <span>Privacy Policy</span>
+                        <a href="#" style={{ "color": 'white' }}>Privacy Policy</a>
                     </div>
                 </div>
                 <div className="col-md-3">
-                    <span className="align-middle">
+                    <p className="align-middle text-justify">
                         CodeEx là nền tảng làm bài tập trực tuyến. Hỗ trợ đăng tải, thực hiện bài tập.
                         Với slogan "CodeEx - Code your excercise", chúng tôi mang đến sứ mệnh giúp bạn thực hành các bài tập của mình, nâng cao trình độ bản thân.
-                    </span>
+                    </p>
                 </div>
                 <div className="col-md-3">
                     <span className="align-middle">
@@ -28,8 +28,10 @@ function Footer() {
                     </span>
                 </div>
                 <div className="col-md-3">
-                    Contact <br />
-                    contact.codeex@gmail.com
+                    <span className="align-middle">
+                        Contact <br />
+                        contact.codeex@gmail.com
+                    </span>
                 </div>
             </div>
         </div>

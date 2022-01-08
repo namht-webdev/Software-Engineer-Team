@@ -23,7 +23,7 @@ function ChallengeCard() {
 
                 </div>
                 <div className="text-center">
-                    <a href="#" className="btn btn-primary">Enroll</a>
+                    <a href="#" className="btn btn-primary">Xem</a>
                 </div>
             </div>
         </div>

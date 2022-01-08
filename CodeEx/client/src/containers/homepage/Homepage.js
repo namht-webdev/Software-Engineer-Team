@@ -1,5 +1,6 @@
 import React from "react";
 import Login from "../../components/login/Login";
+import Signup from "../../components/signup/Signup";
 import "./homepage.css"
 
 function Homepage() {
@@ -14,7 +15,8 @@ function Homepage() {
                     <img id="imgBug" src="image01.png" height="300" className="align" />
                 </div>
                 <div className="col-md-5">
-                    <Login />
+                    {/* <Login /> */}
+                    <Signup />
                 </div>
             </div>
         </div>
