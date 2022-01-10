@@ -1,6 +1,8 @@
 import React from "react"
-import Footer from "../components/footer/Footer";
-import Navbar from "../components/navbar/Navbar";
+import ChallengeDetail from "../components/challengeDetail/ChallengeDetail";
+import ChallengeJoined from "../components/challengeJoined/challengeJoined";
+import CreateChallenge from "../components/createChallenge/createChallenge";
+
 import Home from "./home/Home";
 import Homepage from "./homepage/Homepage";
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
@@ -23,5 +25,4 @@ function App() {
         </AuthContextProvider>
     )
 }
-
 export default App;

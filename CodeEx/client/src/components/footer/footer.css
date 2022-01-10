@@ -3,13 +3,14 @@
     color: white;
     font-size: 14px;
     padding-top: 5px;
-    /* position: fixed;
-    bottom: 0;
-    width: 100%; */
-    position: fixed;
-    height: 100px;
+    position: relative;
     bottom: 0;
     width: 100%;
+    /* position: fixed;
+    height: 100px;
+    bottom: 0;
+    width: 100%; */
+    margin-top: 10px;
 }
 
 img{
