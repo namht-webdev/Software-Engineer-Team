@@ -5,7 +5,7 @@ const verifyUser = require('../middleware/verifyUser');
 const verifyAmind = require('../middleware/verifyAdmin');
 
 router.post('/register', UserController.register);
-router.post('/activate', UserController.verifyEmail);
+// router.post('/activate', UserController.verifyEmail);
 
 // Login
 router.post('/login', UserController.login);
