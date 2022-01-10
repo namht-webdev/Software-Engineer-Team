@@ -3,7 +3,7 @@
     color: white;
     font-size: 14px;
     padding-top: 5px;
-    position: fixed;
+    position: relative;
     bottom: 0;
     width: 100%;
     /* position: fixed;
