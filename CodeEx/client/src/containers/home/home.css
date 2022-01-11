@@ -1,5 +1,6 @@
 #home{
     flex: 1;
+    margin-top: 2vh;
 }
 .container:first{
     margin-top: 20px;

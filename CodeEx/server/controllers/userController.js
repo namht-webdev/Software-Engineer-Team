@@ -38,40 +38,39 @@ class UserController {
             }
             const hashedPassword = await argon2.hash(password);
             const newUser = new User({ username: transformUsername, password: hashedPassword, name, email });
-            const activationToken = createActivationToken({ newUser });
-            const url = `${process.env.CLIENT_URL}/activate/${activationToken}`;
+            // const activationToken = createActivationToken({ newUser });
+            // const url = `${process.env.CLIENT_URL}/activate/${activationToken}`;
 
-            sentMail(email, url, 'Verify your email!');
-
-
+            // sentMail(email, url, 'Verify your email!');
+            newUser.save()
             //await newUser.save();
-            return res.status(200).json({ success: true, message: 'Registration successful, please check your email to verify your registration' });
+            return res.status(200).json({ success: true, message: 'Registration successful' });
         } catch (error) {
             return res.status(500).json({ error: error.message });
         }
     }
 
-    async verifyEmail(req, res) {
-        try {
-            const { activationToken } = req.body;
-            if (!activationToken) return res.status(403).json({ error: error.message });
-            jwt.verify(activationToken, ACTIVATION_TOKEN_SECRET, async (error, user) => {
-                if (error) { return res.status(400).json({ success: false, message: error.message }) }
-                const { username, password, email, name } = user.newUser;
-                const checkEmail = await User.findOne({ email });
+    // async verifyEmail(req, res) {
+    //     try {
+    //         const { activationToken } = req.body;
+    //         if (!activationToken) return res.status(403).json({ error: error.message });
+    //         jwt.verify(activationToken, ACTIVATION_TOKEN_SECRET, async (error, user) => {
+    //             if (error) { return res.status(400).json({ success: false, message: error.message }) }
+    //             const { username, password, email, name } = user.newUser;
+    //             const checkEmail = await User.findOne({ email });
 
-                if (checkEmail) {
-                    console.log(checkEmail);
-                    return res.status(400).json({ success: false, message: 'This email already exists!' });
-                }
-                const newUser = new User({ username, password, email, name });
-                newUser.save();
-                return res.json({ message: 'Your account is activated!' });
-            })
-        } catch (error) {
-            return res.status(500).json({ error: error.message });
-        }
-    }
+    //             if (checkEmail) {
+    //                 console.log(checkEmail);
+    //                 return res.status(400).json({ success: false, message: 'This email already exists!' });
+    //             }
+    //             const newUser = new User({ username, password, email, name });
+    //             newUser.save();
+    //             return res.json({ message: 'Your account is activated!' });
+    //         })
+    //     } catch (error) {
+    //         return res.status(500).json({ error: error.message });
+    //     }
+    // }
 
     async login(req, res) {
         try {

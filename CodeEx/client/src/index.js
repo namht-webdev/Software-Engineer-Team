@@ -5,7 +5,6 @@ import App from './containers/App'
 
 export default App;
 ReactDOM.render(
-    <App />
-    ,
+    <App />,
     document.getElementById('root')
 )
