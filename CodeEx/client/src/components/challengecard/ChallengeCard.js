@@ -1,10 +1,14 @@
 import react from 'react'
 import './challengecard.css'
-
+import { useNavigate, Link } from 'react-router-dom'
+import ChallengeDetail from '../challengeDetail/ChallengeDetail'
+import { Button } from 'react-bootstrap'
 
 const value = 0
 
 function ChallengeCard() {
+    const navigate = useNavigate()
+
     return (
         <div className="challenge-card col-md-3">
             <div className="card border-dark rounded-5">
@@ -23,7 +27,7 @@ function ChallengeCard() {
 
                 </div>
                 <div className="text-center">
-                    <a href="#" className="btn btn-primary">Xem</a>
+                    <button onClick={() => navigate("challengedetail")} className="btn btn-primary">Xem</button>
                 </div>
             </div>
         </div>

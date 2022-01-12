@@ -1,6 +1,7 @@
 import React from 'react'
-
+import { Link, useNavigate } from 'react-router-dom';
 function Signup() {
+    const navigate = useNavigate();
     return (
         <div>
             <div className="col-md-10">
@@ -25,11 +26,11 @@ function Signup() {
                             <input type="checkbox" name="check-terms" checked />
                             <label>I agree with <a href="#">terms and conditions</a></label>
                         </div>
-                        <button type="submit" className="btn btn-primary btn-block">Sign Up</button>
+                        <button type="submit" className="btn btn-primary btn-block" onClick={() => navigate("/login")}>Sign Up</button>
                     </form>
                 </div>
                 <div>
-                    <p className='text-center'>Have an account, <a href='#'>Log In</a></p>
+                    <p className='text-center'>Have an account, <Link to="/login">Login</Link></p>
                 </div>
             </div>
         </div>

@@ -1,8 +1,11 @@
 import React from "react";
+import { Link, useNavigate } from "react-router-dom";
+import Signup from "../signup/Signup";
 
-function Login(){
-    return(
-        <div>
+function Login() {
+    const navigate = useNavigate()
+    return (
+        <div id="login">
             <div className="col-md-10">
                 <div>
                     <h4>Welcome back</h4>
@@ -12,18 +15,18 @@ function Login(){
                     <form>
                         <div className="form-group">
                             <label>Username</label>
-                            <input type="text" className="form-control" placeholder="Username"/>
+                            <input type="text" className="form-control" placeholder="Username" />
                         </div>
                         <div className="form-group">
                             <label>Password</label>
-                            <input type="password" className="form-control" placeholder="Password"/>
+                            <input type="password" className="form-control" placeholder="Password" />
                         </div>
-                        <button type="submit" className="btn btn-primary btn-block">Login</button>
+                        <button type="submit" className="btn btn-primary btn-block" onClick={() => navigate("/home")}>Login</button>
                     </form>
                 </div>
                 <div>
-                    <span>Don't have account, <a href="#">Sign Up</a>
-                    </span> 
+                    <span>Don't have account, <Link to="/signup">Sign Up</Link>
+                    </span>
                 </div>
             </div>
         </div>
