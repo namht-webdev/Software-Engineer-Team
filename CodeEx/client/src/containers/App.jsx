@@ -2,33 +2,35 @@ import React from "react"
 import ChallengeDetail from "../components/challengeDetail/ChallengeDetail";
 import ChallengeJoined from "../components/challengeJoined/challengeJoined";
 import CreateChallenge from "../components/createChallenge/createChallenge";
+// import { BrowserRouter as Router, Route, Switch, Link, NavLink } from 'react-router-dom'
 import Home from "./home/Home";
 import Homepage from "./homepage/Homepage";
+import { BrowserRouter as Router, Routes, Route, Outlet } from 'react-router-dom';
+import AuthContextProvider from "../contexts/authContext";
 import Signup from "../components/signup/Signup";
-
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import NotFound from "../components/notfound/Noufound";
 import AuthContextProvider from "../contexts/authContext";
 import Login from "../components/login/Login";
 function App() {
     return (
         <AuthContextProvider>
             <Router>
-                <Switch>
-                    <Route exact path="/" component={Home}>
+                <Routes>
+                    <Route path="/" element={<Homepage />} >
+                        {/* <Route path="login" element={<Login />} />
+                        <Route path="signup" element={<Signup />} /> */}
                     </Route>
-                    <Route exact path="/homepage" component={Homepage}>
+
+                    <Route path="login" element={<Login />} />
+
+                    <Route path="home" element={<Home />}>
+                        {/* <Route path="challengedetail" element={<ChallengeDetail />} /> */}
+                        {/* <Route path="createchallenge" element={<CreateChallenge />} /> */}
                     </Route>
-                    <Route exact path="/signup" component={Signup}>
-                    </Route>
-                    <Route exact path="/login" component={Login}>
-                    </Route>
-                    <Route exact path="/create" component={CreateChallenge}>
-                    </Route>
-                    <Route exact path="/details" component={ChallengeDetail}>
-                    </Route>
-                    <Route exact path="/joined" component={ChallengeJoined}>
-                    </Route>
-                </Switch>
+                    {/* <Route path="signup" element={<Signup />} /> */}
+                    <Route path="*" element={<NotFound />} />
+                </Routes>
+
             </Router>
         </AuthContextProvider>
     )

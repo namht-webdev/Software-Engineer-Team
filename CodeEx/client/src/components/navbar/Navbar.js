@@ -2,6 +2,7 @@ import React from "react"
 import "./navbar.css"
 import { Nav } from "react-bootstrap";
 import { withRouter } from "react-router";
+import { Link } from "react-router-dom";
 const username = "TuKi"
 
 function Navbar() {
@@ -19,11 +20,9 @@ function Navbar() {
                 <div className="col-md-2">
                     <div id="mySidepanel" className="sidepanel">
                         <img id="logo" src="Logo_B.png"></img>
-                        <a href="javascript:void(0)" className="closebtn" onClick={closeMenu}>&times;</a>
-                        <a href="#"><i class="fa fa-home"></i> Trang chủ</a>
-                        <a href="#"><i class="fa fa-plus"></i> Tạo challenge</a>
-                        <a href="#"><i class="fa fa-table"></i> Challenge</a>
-                        {/* <a href="#">Contact</a> */}
+                        <Link to="/home" className="closebtn" onClick={closeMenu}>&times;</Link>
+                        <Link to="/home"><i className="fa fa-home"></i> Trang chủ</Link>
+                        <Link to="createchallenge"><i className="fa fa-plus"></i> Tạo challenge</Link>
                     </div>
                     <button className="openbtn btn btn-outline-primary" onClick={openMenu}>&#9776; Menu</button>
                 </div>

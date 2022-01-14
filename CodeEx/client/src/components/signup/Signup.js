@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
@@ -11,7 +12,12 @@ const User = {
 }
 
 
+=======
+import React from 'react'
+import { Link, useNavigate } from 'react-router-dom';
+>>>>>>> 423bd28aaffa54f9ef0efafdcc4f557391bf1bf9
 function Signup() {
+    const navigate = useNavigate();
     return (
         <div>
             <div className="background-re">
@@ -59,11 +65,19 @@ function Signup() {
                                 <label className="form-check-label" for="form1Example3"> I agree to terms & conditions </label>
                             </div>
                         </div>
+<<<<<<< HEAD
 
                         <button className="btn btn-primary btn-lg btn-block" type="submit" style={{ width: "70%", fontWeight: "bold" }}>Register</button>
 
 
                     </div>
+=======
+                        <button type="submit" className="btn btn-primary btn-block" onClick={() => navigate("/login")}>Sign Up</button>
+                    </form>
+                </div>
+                <div>
+                    <p className='text-center'>Have an account, <Link to="/login">Login</Link></p>
+>>>>>>> 423bd28aaffa54f9ef0efafdcc4f557391bf1bf9
                 </div>
             </div>
         </div>

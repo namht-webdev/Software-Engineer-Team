@@ -1,4 +1,5 @@
 import React from "react";
+import { Outlet, Routes } from "react-router";
 import Login from "../../components/login/Login";
 import Signup from "../../components/signup/Signup";
 import "./homepage.css"
@@ -15,10 +16,14 @@ function Homepage() {
                     <img id="imgBug" src="image01.png" height="300" className="align" />
                 </div>
                 <div className="col-md-5">
-                    {/* <Login /> */}
-                    <Signup />
+                    {/* <Outlet /> */}
+                    <Login />
+                    {/* <Route path="login" element={<Login />} />
+                    <Route path="signup" element={<Signup />} /> */}
+
                 </div>
             </div>
+            <Outlet />
         </div>
     )
 }
