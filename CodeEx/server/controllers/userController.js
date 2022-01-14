@@ -13,9 +13,9 @@ const {
 
 class UserController {
     async register(req, res) {
-        const { username, password, name, email } = { ...req.body };
+        const { username, password, confirm_password, email } = { ...req.body };
         try {
-            if (!username || !password || !name || !email) {
+            if (!username || !password || !confirm_password || !email) {
                 return res.status(400).json({ success: false, message: 'You have to enter username and password' });
             }
             const transformUsername = username.replace(/\s/g, '').toLowerCase();
@@ -36,8 +36,13 @@ class UserController {
             if (password.length < 6) {
                 return res.status(400).json({ success: false, message: 'Password must be at least 6 characters required' });
             }
+
+            if(password !== confirm_password){
+                return res.status(400).json({ success: false, message: 'Your confirm password does not match'});
+            }
+
             const hashedPassword = await argon2.hash(password);
-            const newUser = new User({ username: transformUsername, password: hashedPassword, name, email });
+            const newUser = new User({ username: transformUsername, password: hashedPassword, email });
             // const activationToken = createActivationToken({ newUser });
             // const url = `${process.env.CLIENT_URL}/activate/${activationToken}`;
 
@@ -81,7 +86,7 @@ class UserController {
             }
             const validPassword = await argon2.verify(user.password, password);
             if (!validPassword) {
-                return res.status(400).json({ message: 'Ypur password incorrect!' });
+                return res.status(400).json({ message: 'Your password incorrect!' });
             }
             if (user.deleted) {
                 return res.json({ message: 'Your account has been blocked!' })
