@@ -1,4 +1,5 @@
 import React from "react";
+<<<<<<< HEAD
 import './login.css'
 import GGlogo from "../../assets/gg_logo.png"
 import { Link } from 'react-router-dom';
@@ -14,6 +15,37 @@ function Login() {
                 <span className="privacy">Copyright <i class="fa fa-copyright" aria-hidden="true"></i> 2022 CodeEx </span>
                 <p></p>
                 <span style={{textDecoration: 'underline'}} className="privacy">Privacy Policy</span>
+=======
+import { Link, useNavigate } from "react-router-dom";
+import Signup from "../signup/Signup";
+
+function Login() {
+    const navigate = useNavigate()
+    return (
+        <div id="login">
+            <div className="col-md-10">
+                <div>
+                    <h4>Welcome back</h4>
+                    <h3>Login to your account</h3>
+                </div>
+                <div className="login-form">
+                    <form>
+                        <div className="form-group">
+                            <label>Username</label>
+                            <input type="text" className="form-control" placeholder="Username" />
+                        </div>
+                        <div className="form-group">
+                            <label>Password</label>
+                            <input type="password" className="form-control" placeholder="Password" />
+                        </div>
+                        <button type="submit" className="btn btn-primary btn-block" onClick={() => navigate("/home")}>Login</button>
+                    </form>
+                </div>
+                <div>
+                    <span>Don't have account, <Link to="/signup">Sign Up</Link>
+                    </span>
+                </div>
+>>>>>>> 423bd28aaffa54f9ef0efafdcc4f557391bf1bf9
             </div>
             <div className="right-bg">
                 <div className="row d-flex justify-content-center align-items-center h-80">
