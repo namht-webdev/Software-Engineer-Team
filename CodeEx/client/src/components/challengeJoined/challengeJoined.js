@@ -9,7 +9,7 @@ function ChallengeJoined() {
     const [challengeDataDetail, setChalDataDetail] = useState("Some quick example text to build on the card title and make up the bulk of the card's content.")
     return (
         <div>
-            <Navbar />
+
             <div id='main-content'>
                 <div className='container col-md-10'>
                     <div id='challenge-name'>
@@ -48,7 +48,7 @@ function ChallengeJoined() {
                     <button className='btn btn-primary' type='submit'>Nộp bài</button>
                 </div>
             </div>
-            <Footer />
+
         </div>
     )
 }

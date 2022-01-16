@@ -20,9 +20,9 @@ function Navbar() {
                 <div className="col-md-2">
                     <div id="mySidepanel" className="sidepanel">
                         <img id="logo" src="Logo_B.png"></img>
-                        <Link to="/home" className="closebtn" onClick={closeMenu}>&times;</Link>
+                        <button className="closebtn btn" onClick={closeMenu}>&times;</button>
                         <Link to="/home"><i className="fa fa-home"></i> Trang chủ</Link>
-                        <Link to="createchallenge"><i className="fa fa-plus"></i> Tạo challenge</Link>
+                        <Link to="/home/createchallenge"><i className="fa fa-plus"></i> Tạo challenge</Link>
                     </div>
                     <button className="openbtn btn btn-outline-primary" onClick={openMenu}>&#9776; Menu</button>
                 </div>

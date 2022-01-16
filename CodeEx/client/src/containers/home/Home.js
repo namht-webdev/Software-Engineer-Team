@@ -1,5 +1,5 @@
 import React from "react";
-import { Outlet } from "react-router";
+import { Outlet } from "react-router-dom";
 import ChallengeCard from "../../components/challengecard/ChallengeCard";
 import Footer from "../../components/footer/Footer";
 import Navbar from "../../components/navbar/Navbar";
@@ -8,7 +8,9 @@ function Home() {
     return (
         <div id="home">
             <Navbar />
-            <div className="container">
+            <ChallengeCard />
+            <Outlet />
+            {/* <div className="container">
                 <div className="row">
                     <ChallengeCard />
                     <ChallengeCard />
@@ -31,7 +33,7 @@ function Home() {
                     <ChallengeCard />
                     <ChallengeCard />
                 </div>
-            </div>
+            </div> */}
             <Footer />
         </div>
     )

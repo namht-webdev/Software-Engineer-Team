@@ -5,7 +5,7 @@ import './createChallenge.css'
 function CreateChallenge() {
     return (
         <div>
-            <Navbar />
+
             <div id='main-content' >
                 <div className='container col-md-10'>
                     <div className="form-group">
@@ -51,7 +51,7 @@ function CreateChallenge() {
                     </button>
                 </div>
             </div>
-            <Footer />
+
         </div>
     )
 }

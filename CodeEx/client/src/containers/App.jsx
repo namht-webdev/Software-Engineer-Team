@@ -19,11 +19,14 @@ function App() {
                     <Route exact path="/login" element={<Login />} />
                     <Route exact path="/signup" element={<Signup />} />
 
-                    <Route exact path="/home" element={<Home />}>
-                        {/* <Route path="challengedetail" element={<ChallengeDetail />} /> */}
-                        {/* <Route path="createchallenge" element={<CreateChallenge />} /> */}
+                    <Route exact path="/home/*" element={<Home />}>
+                        <Route path="challengedetail" element={<ChallengeDetail />} />
+                        <Route path="createchallenge" element={<CreateChallenge />} />
+                        <Route path="challengejoined" element={<ChallengeJoined />} />
                     </Route>
-                    {/* <Route path="signup" element={<Signup />} /> */}
+                    {/* <Route path="/home/challengedetail" element={<ChallengeDetail />} />
+                    <Route path="/home/createchallenge" element={<CreateChallenge />} /> */}
+
                     <Route path="*" element={<NotFound />} />
                 </Routes>
 

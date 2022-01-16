@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router';
 import Footer from '../footer/Footer';
 import Navbar from '../navbar/Navbar';
 import './challengedetail.css'
 
 function ChallengeDetail(props) {
     // challengeName = "Challenge Name"
+    const navigate = useNavigate();
     const [challengeName, setChalName] = useState("Challenge Name")
     const [challengeDescription, setChalDes] = useState("Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.")
     const [username, setUsername] = useState("TuKi")
@@ -12,8 +14,9 @@ function ChallengeDetail(props) {
     const [challengeDateEnd, setChalDateEnd] = useState("01/01/2022")
     const [challengeDataDetail, setChalDataDetail] = useState("Some quick example text to build on the card title and make up the bulk of the card's content.")
     return (
+
         <div>
-            <Navbar />
+
             <div id='main-content'>
                 <div className='container col-md-10'>
                     <div id='challenge-name'>
@@ -53,10 +56,10 @@ function ChallengeDetail(props) {
                             {challengeDataDetail}
                         </p>
                     </div>
-                    <button className='btn btn-primary' type='submit'>Tham gia</button>
+                    <button onClick={() => navigate("../challengejoined")} className='btn btn-primary' type='submit'>Tham gia</button>
                 </div>
             </div>
-            <Footer />
+
         </div>
     )
 }
