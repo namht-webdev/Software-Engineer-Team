@@ -7,34 +7,17 @@ import './home.css'
 function Home() {
     return (
         <div id="home">
+
             <Navbar />
+
             <ChallengeCard />
-            <Outlet />
-            {/* <div className="container">
-                <div className="row">
-                    <ChallengeCard />
-                    <ChallengeCard />
-                    <ChallengeCard />
-                    <ChallengeCard />
-                </div>
+            <div style={{ flex: "1 0 auto" }}>
+                <Outlet />
             </div>
-            <div className="container">
-                <div className="row">
-                    <ChallengeCard />
-                    <ChallengeCard />
-                    <ChallengeCard />
-                    <ChallengeCard />
-                </div>
-            </div>
-            <div className="container">
-                <div className="row">
-                    <ChallengeCard />
-                    <ChallengeCard />
-                    <ChallengeCard />
-                    <ChallengeCard />
-                </div>
-            </div> */}
+
             <Footer />
+
+
         </div>
     )
 }

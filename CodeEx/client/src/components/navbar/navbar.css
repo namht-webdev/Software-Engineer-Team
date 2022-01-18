@@ -49,6 +49,7 @@
   /* Position and style the close button (top right corner) */
   .sidepanel .closebtn {
     position: absolute;
+    color: white;
     top: 0;
     right: 25px;
     font-size: 36px;

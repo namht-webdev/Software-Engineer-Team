@@ -1,18 +1,18 @@
 import React from "react";
 import "./footer.css"
-
+import codeExlogo from "../../assets/Logo_W.png"
 function Footer() {
     return (
-        <div id="footer" className="">
+        <footer id="footer" className="">
             <div className="container-fluid row">
                 <div className="col-md-3">
                     <div>
-                        <img src="Logo_W.png" />
+                        <img src={codeExlogo} />
                     </div>
                     <div>
                         <span>Copyright 2021 CodeEx</span>
                         <br />
-                        <a href="#" style={{ "color": 'white' }}>Privacy Policy</a>
+                        <a href="#" style={{ color: 'white' }}>Privacy Policy</a>
                     </div>
                 </div>
                 <div className="col-md-3">
@@ -34,7 +34,7 @@ function Footer() {
                     </span>
                 </div>
             </div>
-        </div>
+        </footer>
     )
 }
 

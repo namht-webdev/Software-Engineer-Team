@@ -5,7 +5,6 @@ import './createChallenge.css'
 function CreateChallenge() {
     return (
         <div>
-
             <div id='main-content' >
                 <div className='container col-md-10'>
                     <div className="form-group">
