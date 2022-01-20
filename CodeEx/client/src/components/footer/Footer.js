@@ -3,7 +3,7 @@ import "./footer.css"
 import codeExlogo from "../../assets/Logo_W.png"
 function Footer() {
     return (
-        <footer id="footer" className="">
+        <footer id="footer" className="footer">
             <div className="container-fluid row">
                 <div className="col-md-3">
                     <div>

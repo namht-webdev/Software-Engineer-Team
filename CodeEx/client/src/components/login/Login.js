@@ -9,11 +9,11 @@ function Login() {
     return (
         <div>
             <div className="background">
-                <img className="logo" src={codeExlogo}/>
+                <img className="logo" src={codeExlogo} />
                 <h2 className="slogan">CodeEx code your exercise</h2>
                 <span className="privacy">Copyright <i class="fa fa-copyright" aria-hidden="true"></i> 2022 CodeEx </span>
                 <p></p>
-                <span style={{textDecoration: 'underline'}} className="privacy">Privacy Policy</span>
+                <span style={{ textDecoration: 'underline' }} className="privacy">Privacy Policy</span>
 
             </div>
             <div className="right-bg">
@@ -24,13 +24,13 @@ function Login() {
                         <h3 style={{ marginLeft: "-100px", fontWeight: "bold" }} className="mb-5">Login to your account</h3>
                         <label className="form-label text-left" style={{ display: "block", marginLeft: "15%" }}>Email</label>
                         <div className="form-outline mb-4">
-                            <input type="email" id="typeEmailX-2" className="form-control form-control-lg form-width" placeholder="Deadline@gmail.com"/>
+                            <input type="email" id="typeEmailX-2" className="form-control form-control-lg form-width" placeholder="Deadline@gmail.com" />
                         </div>
 
                         <label className="form-label text-left" style={{ display: "block", marginLeft: "15%" }}>Password</label>
                         <div className="form-outline mb-4" style={{ display: "inline" }}>
 
-                            <input type="password" className="form-control form-control-lg form-width" style={{ clear: "both" }} placeholder="hashdshadhash"/>
+                            <input type="password" className="form-control form-control-lg form-width" style={{ clear: "both" }} placeholder="hashdshadhash" />
                         </div>
 
                         <div style={{ marginLeft: "15%" }} className="form-check d-flex justify-content-start mb-4">
@@ -46,7 +46,7 @@ function Login() {
                             </div>
                         </div>
 
-                        <button className="btn btn-primary btn-lg btn-block" type="submit" style={{ width: "70%", fontWeight: "bold" }}>Login</button>
+                        <Link to='/home'><button className="btn btn-primary btn-lg btn-block" type="submit" style={{ width: "70%", fontWeight: "bold" }}>Login</button></Link>
 
                         <hr className="my-4" />
 

@@ -7,17 +7,15 @@ import './home.css'
 function Home() {
     return (
         <div id="home">
+            <div style={{ display: "block", minHeight: "100vh", paddingBottom: "60px" }}>
+                <Navbar />
 
-            <Navbar />
+                <div className="justify-content-center">
+                    <Outlet />
+                </div>
 
-            <ChallengeCard />
-            <div style={{ flex: "1 0 auto" }}>
-                <Outlet />
             </div>
-
             <Footer />
-
-
         </div>
     )
 }

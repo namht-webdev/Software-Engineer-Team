@@ -1,18 +1,11 @@
 #footer {
+    position: relative;
     background: black;
     color: white;
-    position:sticky;
     font-size: 14px;
-    padding-top: 5px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    margin-top: 10px;
-    width: 100%;
-    /* position: fixed; */
-    
-    flex-shrink: 0;
-    
+    bottom: 0;
+    width: 100%;   
+
 }
 
 img{

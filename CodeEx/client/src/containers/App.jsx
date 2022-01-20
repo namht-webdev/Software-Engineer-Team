@@ -10,16 +10,19 @@ import AuthContextProvider from "../contexts/authContext";
 import Login from "../components/login/Login";
 import Userinfo from "../components/userinfo/Userinfo";
 import ChallengeCard from "../components/challengecard/ChallengeCard";
+import Challenge from "../components/challenge/Challenge";
 function App() {
     return (
         <AuthContextProvider>
             <Router>
                 <Routes>
-                    <Route path="/" element={<Navigate replace to="/home" />} />
+                    <Route path="/" element={<Navigate replace to="/login" />} />
                     <Route exact path="/login" element={<Login />} />
                     <Route exact path="/signup" element={<Signup />} />
 
                     <Route exact path="/home/*" element={<Home />}>
+                        {/* <Challenge /> */}
+                        <Route path="" element={<Challenge />} />
                         <Route path="challengedetail" element={<ChallengeDetail />} />
                         <Route path="createchallenge" element={<CreateChallenge />} />
                         <Route path="challengejoined" element={<ChallengeJoined />} />

@@ -1,7 +1,5 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router';
-import Footer from '../footer/Footer';
-import Navbar from '../navbar/Navbar';
 import './challengedetail.css'
 
 function ChallengeDetail(props) {
@@ -14,9 +12,7 @@ function ChallengeDetail(props) {
     const [challengeDateEnd, setChalDateEnd] = useState("01/01/2022")
     const [challengeDataDetail, setChalDataDetail] = useState("Some quick example text to build on the card title and make up the bulk of the card's content.")
     return (
-
         <div>
-
             <div id='main-content'>
                 <div className='container col-md-10'>
                     <div id='challenge-name'>
@@ -24,9 +20,9 @@ function ChallengeDetail(props) {
                     </div>
                     <nav aria-label="breadcrumb">
                         <ol className="breadcrumb">
-                            <li className="breadcrumb-item active" aria-current="page" ><a href="#">Tổng quan</a></li>
-                            <li className="breadcrumb-item"><a href="#">Thảo luận</a></li>
-                            <li className="breadcrumb-item"><a href='#'>Bảng xếp hạng</a></li>
+                            <li className="breadcrumb-item active" aria-current="page" ><a href="#">Overview</a></li>
+                            <li className="breadcrumb-item"><a href="#">Discuss</a></li>
+                            <li className="breadcrumb-item"><a href='#'>Ranking</a></li>
                         </ol>
                     </nav>
                     <div>

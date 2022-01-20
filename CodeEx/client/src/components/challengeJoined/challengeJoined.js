@@ -36,12 +36,12 @@ function ChallengeJoined() {
                         </p>
                     </div>
                     <div>
-                        {/* <div data-pym-src="https://www.jdoodle.com/embed/v0/4hZi"></div> */}
                         <iframe
                             frameBorder="0"
                             height="450px"
-                            src="https://onecompiler.com/embed/"
+                            src="https://onecompiler.com/embed/?hideNew=true"
                             width="100%"
+
                         ></iframe>
                     </div>
                     <button className='btn btn-primary' type='submit'>Nộp bài</button>
