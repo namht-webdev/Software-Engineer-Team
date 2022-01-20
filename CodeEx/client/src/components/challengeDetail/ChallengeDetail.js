@@ -26,33 +26,33 @@ function ChallengeDetail(props) {
                         </ol>
                     </nav>
                     <div>
-                        <label className='font-weight-bold'>Người tạo: </label>
+                        <label className='font-weight-bold'>Creator: </label>
                         <span> {username}</span>
                     </div>
                     <div>
-                        <label className='font-weight-bold'>Ngày tạo: </label>
+                        <label className='font-weight-bold'>Date created: </label>
                         <span> {challengeDateStart}</span>
                     </div>
 
                     <div>
-                        <label className='font-weight-bold'>Ngày kết thúc: </label>
+                        <label className='font-weight-bold'>End date: </label>
                         <span> {challengeDateEnd}</span>
                     </div>
                     <div>
-                        <label className='font-weight-bold'>Mô tả: </label>
+                        <label className='font-weight-bold'>Description: </label>
                         <p id='challenge-description' className='text-justify'>
                             {challengeDescription}
                         </p>
                     </div>
                     <div>
                         <label className='font-weight-bold'>
-                            Mô tả dữ liệu:
+                            Data description:
                         </label>
                         <p className='text-justify'>
                             {challengeDataDetail}
                         </p>
                     </div>
-                    <button onClick={() => navigate("../challengejoined")} className='btn btn-primary' type='submit'>Tham gia</button>
+                    <button onClick={() => navigate("../challengejoined")} className='btn btn-primary' type='submit'>Enroll</button>
                 </div>
             </div>
 

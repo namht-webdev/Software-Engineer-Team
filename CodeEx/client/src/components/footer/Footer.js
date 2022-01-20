@@ -17,8 +17,10 @@ function Footer() {
                 </div>
                 <div className="col-md-3">
                     <p className="align-middle text-justify">
-                        CodeEx là nền tảng làm bài tập trực tuyến. Hỗ trợ đăng tải, thực hiện bài tập.
-                        Với slogan "CodeEx - Code your excercise", chúng tôi mang đến sứ mệnh giúp bạn thực hành các bài tập của mình, nâng cao trình độ bản thân.
+                        CodeEx is an online homework platform. Support posting, performing exercises.
+                        With the slogan "CodeEx - Code your excercise", we bring the mission to help you practice your exercises, improve yourself.
+                        {/* CodeEx là nền tảng làm bài tập trực tuyến. Hỗ trợ đăng tải, thực hiện bài tập.
+                        Với slogan "CodeEx - Code your excercise", chúng tôi mang đến sứ mệnh giúp bạn thực hành các bài tập của mình, nâng cao trình độ bản thân. */}
                     </p>
                 </div>
                 <div className="col-md-3">

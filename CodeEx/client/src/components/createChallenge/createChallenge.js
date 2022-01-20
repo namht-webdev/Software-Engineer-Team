@@ -8,11 +8,11 @@ function CreateChallenge() {
             <div id='main-content' >
                 <div className='container col-md-10'>
                     <div className="form-group">
-                        <label for="challengeName">Tên challenge</label>
+                        <label for="challengeName">Challenge name</label>
                         <input type="text" className="form-control input-field" id="challengeName" placeholder="Name" />
                     </div>
                     <div className="form-group">
-                        <label for="exampleFormControlSelect1">Ngôn ngữ sử dụng</label>
+                        <label for="exampleFormControlSelect1">Language</label>
                         <select className="form-control input-field" id="challenge">
                             <option>Python</option>
                             <option>C/C++</option>
@@ -22,31 +22,31 @@ function CreateChallenge() {
                         </select>
                     </div>
                     <div className="form-group">
-                        <label for="challengeDateStart">Ngày bắt đầu</label>
+                        <label for="challengeDateStart">Start date</label>
                         <input type="date" className='form-control input-field' id='challengeDateStart' />
                     </div>
                     <div className="form-group">
-                        <label for="challengeDateEnd">Ngày kết thúc</label>
+                        <label for="challengeDateEnd">End date</label>
                         <input type="date" className='form-control input-field' id='challengeDateEnd' />
                     </div>
                     <div className="form-group">
-                        <label for="challengeDescription">Mô tả bài toán</label>
+                        <label for="challengeDescription">Description</label>
                         <textarea className="form-control input-field" id="challengeDescription" rows="3" resize="None"></textarea>
                     </div>
                     <div className='form-group'>
-                        <label for>Mô tả input: </label>
+                        <label for>Input: </label>
                         <input type="text" id='challengeInputDes' className='form-control input-field' />
                     </div>
                     <div className='form-group'>
-                        <label for>Mô tả output: </label>
+                        <label for>Output: </label>
                         <input type="text" id='challengeOutputDes' className='form-control input-field' />
                     </div>
                     <div className="form-group">
-                        <label for="challengeDataTest">Dữ liệu: </label>
+                        <label for="challengeDataTest">Data (optional): </label>
                         <input type="file" class="form-control-file" id="challengeDataTest " />
                     </div>
                     <button type='submit' className='btn btn-primary'>
-                        Tạo challenge
+                        Create
                     </button>
                 </div>
             </div>

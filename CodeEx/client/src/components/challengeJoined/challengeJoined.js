@@ -16,20 +16,20 @@ function ChallengeJoined() {
                     </div>
                     <nav aria-label="breadcrumb">
                         <ol className="breadcrumb">
-                            <li className="breadcrumb-item active" aria-current="page" ><a href="#">Tổng quan</a></li>
-                            <li className="breadcrumb-item"><a href="#">Thảo luận</a></li>
-                            <li className="breadcrumb-item"><a href='#'>Bảng xếp hạng</a></li>
+                            <li className="breadcrumb-item active" aria-current="page" ><a href="#">Overview</a></li>
+                            <li className="breadcrumb-item"><a href="#">Discuss</a></li>
+                            <li className="breadcrumb-item"><a href='#'>Ranking</a></li>
                         </ol>
                     </nav>
                     <div>
-                        <label className='font-weight-bold'>Mô tả: </label>
+                        <label className='font-weight-bold'>Description: </label>
                         <p id='challenge-description' className='text-justify'>
                             {challengeDescription}
                         </p>
                     </div>
                     <div>
                         <label className='font-weight-bold'>
-                            Mô tả dữ liệu:
+                            Data description:
                         </label>
                         <p className='text-justify'>
                             {challengeDataDetail}
@@ -44,7 +44,7 @@ function ChallengeJoined() {
 
                         ></iframe>
                     </div>
-                    <button className='btn btn-primary' type='submit'>Nộp bài</button>
+                    <button className='btn btn-primary' type='submit'>Submit</button>
                 </div>
             </div>
 

@@ -6,7 +6,7 @@ function Userinfo() {
         <div id="userinfo" className="container row">
             <nav >
                 <ol className="breadcrumb">
-                    <li className="breadcrumb-item active" aria-current="page" ><Link to="../user/info">Hồ sơ</Link></li>
+                    <li className="breadcrumb-item active" aria-current="page" ><Link to="../user/info">Profile</Link></li>
                     <li className="breadcrumb-item"><Link to="../user/challenge">Challenge</Link></li>
                 </ol>
             </nav>
@@ -28,13 +28,13 @@ function Userinfo() {
                         <td><i class="fa fa-cog" aria-hidden="true"></i></td>
                     </tr>
                     <tr>
-                        <td>Ngày sinh</td>
+                        <td>Date of birth</td>
                         <td>01/01/2000</td>
                         <td><i class="fa fa-cog" aria-hidden="true"></i></td>
                     </tr>
                     <tr>
-                        <td>Giới tính</td>
-                        <td>Nam</td>
+                        <td>Gender</td>
+                        <td>Male</td>
                         <td><i class="fa fa-cog" aria-hidden="true"></i></td>
                     </tr>
                 </table>
