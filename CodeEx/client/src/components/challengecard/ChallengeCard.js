@@ -10,7 +10,7 @@ function ChallengeCard() {
     const navigate = useNavigate()
 
     return (
-        <div className="challenge-card col-md-3">
+        <div className="challenge-card col-md-3 mt-4">
             <div className="card border-dark rounded-5">
                 {/* <img className="card-img-top" src="..." alt="Card image cap"/> */}
                 <div className="card-body">
