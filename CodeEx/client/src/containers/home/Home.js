@@ -1,5 +1,5 @@
 import React from "react";
-import { Outlet } from "react-router";
+import { Outlet } from "react-router-dom";
 import ChallengeCard from "../../components/challengecard/ChallengeCard";
 import Footer from "../../components/footer/Footer";
 import Navbar from "../../components/navbar/Navbar";
@@ -7,30 +7,13 @@ import './home.css'
 function Home() {
     return (
         <div id="home">
-            <Navbar />
-            <div className="container">
-                <div className="row">
-                    <ChallengeCard />
-                    <ChallengeCard />
-                    <ChallengeCard />
-                    <ChallengeCard />
+            <div style={{ display: "block", minHeight: "100vh", paddingBottom: "60px" }}>
+                <Navbar />
+
+                <div className="justify-content-center">
+                    <Outlet />
                 </div>
-            </div>
-            <div className="container">
-                <div className="row">
-                    <ChallengeCard />
-                    <ChallengeCard />
-                    <ChallengeCard />
-                    <ChallengeCard />
-                </div>
-            </div>
-            <div className="container">
-                <div className="row">
-                    <ChallengeCard />
-                    <ChallengeCard />
-                    <ChallengeCard />
-                    <ChallengeCard />
-                </div>
+
             </div>
             <Footer />
         </div>

@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
-import Footer from '../footer/Footer';
-import Navbar from '../navbar/Navbar';
+import { useNavigate } from 'react-router';
 import './challengedetail.css'
 
 function ChallengeDetail(props) {
     // challengeName = "Challenge Name"
+    const navigate = useNavigate();
     const [challengeName, setChalName] = useState("Challenge Name")
     const [challengeDescription, setChalDes] = useState("Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.")
     const [username, setUsername] = useState("TuKi")
@@ -13,7 +13,6 @@ function ChallengeDetail(props) {
     const [challengeDataDetail, setChalDataDetail] = useState("Some quick example text to build on the card title and make up the bulk of the card's content.")
     return (
         <div>
-            <Navbar />
             <div id='main-content'>
                 <div className='container col-md-10'>
                     <div id='challenge-name'>
@@ -21,42 +20,42 @@ function ChallengeDetail(props) {
                     </div>
                     <nav aria-label="breadcrumb">
                         <ol className="breadcrumb">
-                            <li className="breadcrumb-item active" aria-current="page" ><a href="#">Tổng quan</a></li>
-                            <li className="breadcrumb-item"><a href="#">Thảo luận</a></li>
-                            <li className="breadcrumb-item"><a href='#'>Bảng xếp hạng</a></li>
+                            <li className="breadcrumb-item active" aria-current="page" ><a href="#">Overview</a></li>
+                            <li className="breadcrumb-item"><a href="#">Discuss</a></li>
+                            <li className="breadcrumb-item"><a href='#'>Ranking</a></li>
                         </ol>
                     </nav>
                     <div>
-                        <label className='font-weight-bold'>Người tạo: </label>
+                        <label className='font-weight-bold'>Creator: </label>
                         <span> {username}</span>
                     </div>
                     <div>
-                        <label className='font-weight-bold'>Ngày tạo: </label>
+                        <label className='font-weight-bold'>Date created: </label>
                         <span> {challengeDateStart}</span>
                     </div>
 
                     <div>
-                        <label className='font-weight-bold'>Ngày kết thúc: </label>
+                        <label className='font-weight-bold'>End date: </label>
                         <span> {challengeDateEnd}</span>
                     </div>
                     <div>
-                        <label className='font-weight-bold'>Mô tả: </label>
+                        <label className='font-weight-bold'>Description: </label>
                         <p id='challenge-description' className='text-justify'>
                             {challengeDescription}
                         </p>
                     </div>
                     <div>
                         <label className='font-weight-bold'>
-                            Mô tả dữ liệu:
+                            Data description:
                         </label>
                         <p className='text-justify'>
                             {challengeDataDetail}
                         </p>
                     </div>
-                    <button className='btn btn-primary' type='submit'>Tham gia</button>
+                    <button onClick={() => navigate("../challengejoined")} className='btn btn-primary' type='submit'>Enroll</button>
                 </div>
             </div>
-            <Footer />
+
         </div>
     )
 }
