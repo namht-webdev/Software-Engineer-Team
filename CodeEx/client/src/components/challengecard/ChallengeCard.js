@@ -27,7 +27,7 @@ function ChallengeCard() {
 
                 </div>
                 <div className="text-center">
-                    <button onClick={() => navigate("challengedetail")} className="btn btn-primary">Xem</button>
+                    <button onClick={() => navigate("challengedetail")} className="btn btn-primary">View</button>
                 </div>
             </div>
         </div>
