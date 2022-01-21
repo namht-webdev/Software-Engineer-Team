@@ -13,42 +13,43 @@ const {
 
 class UserController {
     async register(req, res) {
-        const { username, password, confirm_password, email } = { ...req.body };
+        const { password, confirm_password, email } = { ...req.body };
+        console.log(email, password, confirm_password);
         try {
-            if (!username || !password || !confirm_password || !email) {
+            if (!password || !confirm_password || !email) {
                 return res.status(400).json({ success: false, message: 'You have to enter username and password' });
             }
-            const transformUsername = username.replace(/\s/g, '').toLowerCase();
-            const user = await User.findOne({ username: transformUsername }).lean();
+            // const transformUsername = username.replace(/\s/g, '').toLowerCase();
+            //const user = await User.findOne({ username: transformUsername }).lean();
             const checkEmail = await User.findOne({ email }).lean();
-            if (user) {
-                return res.status(400).json({ success: false, message: 'This username already exists, please use another username!' });
-            }
 
             if (checkEmail) {
-                return res.status(400).json({ success: false, message: 'This email already exists, please use another email!' });
+                return res.status(200).json({ success: false, message: 'This email already exists, please use another email!' });
             }
 
             if (!validateEmail(email)) {
-                return res.status(400).json({ success: false, message: 'Invalid email' });
+                return res.status(200).json({ success: false, message: 'Invalid email' });
             }
+
 
             if (password.length < 6) {
-                return res.status(400).json({ success: false, message: 'Password must be at least 6 characters required' });
+                return res.status(200).json({ success: false, message: 'Password must be at least 6 characters required' });
             }
 
-            if(password !== confirm_password){
-                return res.status(400).json({ success: false, message: 'Your confirm password does not match'});
+            if (password !== confirm_password) {
+                return res.status(200).json({ success: false, message: 'Your confirm password does not match' });
             }
 
             const hashedPassword = await argon2.hash(password);
-            const newUser = new User({ username: transformUsername, password: hashedPassword, email });
+            const newUser = new User({ username: 'temp', password: hashedPassword, email });
             // const activationToken = createActivationToken({ newUser });
             // const url = `${process.env.CLIENT_URL}/activate/${activationToken}`;
-
+            await newUser.save();
             // sentMail(email, url, 'Verify your email!');
-            newUser.save()
-            //await newUser.save();
+            const id = newUser._id.toString();
+            const username = "user" + id.substr(id.length - 5);
+            await User.findOneAndUpdate({ _id: newUser._id }, { username });
+            //
             return res.status(200).json({ success: true, message: 'Registration successful' });
         } catch (error) {
             return res.status(500).json({ error: error.message });
@@ -80,17 +81,20 @@ class UserController {
     async login(req, res) {
         try {
             const { email, password } = req.body;
-            const user = await User.findOneWithDeleted({ email });
-            if (!user) {
-                return res.status(400).json({ message: 'This email invalid!' });
+            const isblock = await User.findOneDeleted({ email });
+            if (isblock) {
+                return res.status(200).json({ success: false, message: 'This email has been blocked!' });
             }
+            const user = await User.findOne({email });
+            if(!user){
+                return res.status(200).json({success: false, message: 'Your email address is incorrect'})
+            }
+
             const validPassword = await argon2.verify(user.password, password);
             if (!validPassword) {
-                return res.status(400).json({ message: 'Your password incorrect!' });
+                return res.status(200).json({success: false, message: 'Your email address or password is incorrect!' });
             }
-            if (user.deleted) {
-                return res.json({ message: 'Your account has been blocked!' })
-            }
+
 
             const refreshToken = createRefreshToken({ id: user._id });
             res.cookie('refreshToken', refreshToken, {
@@ -99,7 +103,7 @@ class UserController {
                 maxAge: 3600 * 24 * 1000 * 7
             })
 
-            return res.json({ message: 'Login success!' })
+            return res.json({ message: 'Login success!', success: true, userId: user._id });
         } catch (error) {
             return res.status(500).json({ error: error.message });
 
@@ -180,11 +184,11 @@ class UserController {
                 return res.status(400).json({ message: 'Invalid email!' });
             }
             const user = await User.findOneWithDeleted({ email });
-            if(!user) {
-                return res.status(400).json({ message: 'This user is not blocked!'});
+            if (!user) {
+                return res.status(400).json({ message: 'This user is not blocked!' });
             }
             await user.restore();
-            return res.status(200).json({ message: 'This email is unblock!'});
+            return res.status(200).json({ message: 'This email is unblock!' });
         } catch (error) {
             return res.status(500).json({ error: error.message });
         }

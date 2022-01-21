@@ -43,7 +43,7 @@ function CreateChallenge() {
                     </div>
                     <div className="form-group">
                         <label for="challengeDataTest">Data (optional): </label>
-                        <input type="file" class="form-control-file" id="challengeDataTest " />
+                        <input type="file" className="form-control-file" id="challengeDataTest " />
                     </div>
                     <button type='submit' className='btn btn-primary'>
                         Create
