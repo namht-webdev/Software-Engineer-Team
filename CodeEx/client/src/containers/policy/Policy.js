@@ -6,7 +6,7 @@ function Policy() {
             <div className='text-center' id="policy-header">
                 <p>CHÍNH SÁCH BẢO MẬT</p>
             </div>
-            <div id='main-content' className=''>
+            <div id='main-contents' className=''>
                 <div className="content text-justify">
                     <p className="ptext">
                         Quyền riêng tư dữ liệu rất quan trọng đối với CodeEx và khi nói đến dữ liệu của bạn, chúng tôi cam kết bảo vệ dữ liệu đó và cung cấp sự minh bạch về thông tin chúng tôi thu thập từ bạn và cách chúng tôi sử dụng dữ liệu đó. Chính sách Bảo mật này được thiết kế để cho bạn biết thông tin mà chúng tôi thu thập về bạn trên các trang web của chúng tôi (“Trang web”), bao gồm từ các cá nhân đăng ký sử dụng cộng đồng CodeEx trực tuyến dành cho các nhà phát triển phần mềm (“Cộng đồng CodeEx”) và các cá nhân sử dụng dịch vụ CodeEx for Work. Chính sách Bảo mật này mô tả các thực tiễn về quyền riêng tư của CodeEx liên quan đến việc sử dụng Trang web, các ứng dụng và dịch vụ liên quan do CodeEx cung cấp (gọi chung là “Dịch vụ”), cũng như các lựa chọn của cá nhân liên quan đến việc sử dụng, truy cập và chỉnh sửa thông tin cá nhân. Trong Chính sách quyền riêng tư này, các điều khoản “CodeEx”

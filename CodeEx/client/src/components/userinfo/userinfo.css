@@ -4,8 +4,7 @@
 }
 
 .breadcrumb{
-    /* background-color: darkgreen; */
-    /* color: black;    */
+    
     font-size: 25px;
     padding-left: 15px;
 }
@@ -26,7 +25,7 @@
     background-image: url("../../assets/imgcr.png");
 }
 
-.pncr{
+.name{
     font-size: 3em;
     margin-top: 10px;
     font-weight: bold;

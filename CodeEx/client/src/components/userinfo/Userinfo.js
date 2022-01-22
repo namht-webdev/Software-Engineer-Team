@@ -9,7 +9,7 @@ function Userinfo() {
         <div id="userinfo">
             <div id="ava">
                 <img className="avaimg" src={ava} />
-                <p className="pncr">Nguyễn Văn CodeEx</p>
+                <p className="name">Nguyễn Văn CodeEx</p>
             </div>
             <div className="container-fluid row">
                 {/* <nav className="">
