@@ -1,32 +1,48 @@
-import react from 'react'
+import {useState, useEffect} from 'react'
 import './challengecard.css'
 import { useNavigate, Link } from 'react-router-dom'
-import ChallengeDetail from '../challengeDetail/ChallengeDetail'
-import { Button } from 'react-bootstrap'
+import cpp from '../../assets/cpp.png'
+import python from '../../assets/python.png'
+import java from '../../assets/java.png'
+import js from '../../assets/js.png'
 
-const value = 0
 
-function ChallengeCard() {
+function ChallengeCard(props) {
     const navigate = useNavigate()
+    const [language, setLanguage] = useState();
+    useEffect(() =>{
+        if(props.type === "Java"){
+            setLanguage(java)
+        }
+        else if(props.type === "JavaScript"){
+            setLanguage(js)
+        }
+        else if(props.type === "Python"){
+            setLanguage(python)
+        }
+        else{
+            setLanguage(cpp)
+        }
+    },[]);
 
     return (
-        <div className="challenge-card col-md-3 mt-4">
-            <div className="card border-dark rounded-5">
-                {/* <img className="card-img-top" src="..." alt="Card image cap"/> */}
-                <div className="card-body">
-                    <h4 className="card-title">Card Title</h4>
-                    <p className="card-text text-justify">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <div className="challenge-card mt-4">
+            <div className="card border-dark" style={{borderRadius: "20px"}}>
+                <img className="card-img-top" src={language} alt="Card image cap"/>
+                <div className="card-body" style={{backgroundColor: "#242730", color:"white"}}>
+                    <h4 className="card-title">{props.title}</h4>
+                    <p className="card-text text-justify">{props.description}</p>
                     <div>
                         <span className="pull-left" id='teams'>
-                            {value} Team
+                            {props.numberTakeIn} participants
                         </span>
                         <span className="pull-right" id="votes">
-                            {value} votes
+                            {props.numberVote} votes
                         </span>
                     </div>
 
                 </div>
-                <div className="text-center">
+                <div className="text-center" style={{backgroundColor: "#242730", borderRadius: "0 0 20px 20px"}}>
                     <button onClick={() => navigate("challengedetail")} className="btn btn-primary">View</button>
                 </div>
             </div>

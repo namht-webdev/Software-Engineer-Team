@@ -1,10 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { BrowserRouter } from 'react-router-dom'
 import App from './containers/App'
 
 export default App;
 ReactDOM.render(
-    <App />,
+    <React.StrictMode>
+    <App />
+    </React.StrictMode>,
     document.getElementById('root')
 )
