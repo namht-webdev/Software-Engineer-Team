@@ -1,6 +1,3 @@
-import Footer from '../footer/Footer';
-import Navbar from '../navbar/Navbar';
-import {Link, useNavigate} from 'react-router-dom';
 import { useState, useContext } from 'react';
 import { ChallengeContext } from '../../contexts/challengeContext'
 import './createChallenge.css';
@@ -8,7 +5,6 @@ import img from '../../assets/imgcr.png';
 import { Spinner } from 'react-bootstrap';
 
 function CreateChallenge() {
-    const redirect = useNavigate();
     const { create } = useContext(ChallengeContext);
     const [message, setMessage] = useState('');
     const [spinner, setSpinner] = useState(false)
@@ -35,7 +31,7 @@ function CreateChallenge() {
             setMessage('Starting date must be greater than or equal to day ending date');
             return false;
         }
-        if (Date.parse(challenge.dayStart) > Date.now()) {
+        if (Date.parse(challenge.dayStart) < Date.now()) {
             setMessage('Starting date must be greater than or equal to today');
             return false;
         }
@@ -52,7 +48,7 @@ function CreateChallenge() {
                     setSpinner(true);
                     if(response.data.success) {
                         alert('Your challenge was created successfully!');
-                        redirect('/home');
+                        window.location.assign("/home");
                     }
                 }
                 

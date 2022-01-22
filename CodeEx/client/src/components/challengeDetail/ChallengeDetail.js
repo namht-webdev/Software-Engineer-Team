@@ -1,22 +1,27 @@
-import React, { useState } from 'react'
-import { useNavigate } from 'react-router';
+import React, { useContext, useEffect } from 'react'
 import './challengedetail.css'
+import { ChallengeContext } from '../../contexts/challengeContext'
+import axios from 'axios';
+import { apiURL } from '../../contexts/constants';
 
-function ChallengeDetail(props) {
-    // challengeName = "Challenge Name"
-    const navigate = useNavigate();
-    const [challengeName, setChalName] = useState("Challenge Name")
-    const [challengeDescription, setChalDes] = useState("Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.")
-    const [username, setUsername] = useState("TuKi")
-    const [challengeDateStart, setChalDateStart] = useState("01/01/2000")
-    const [challengeDateEnd, setChalDateEnd] = useState("01/01/2022")
-    const [challengeDataDetail, setChalDataDetail] = useState("Some quick example text to build on the card title and make up the bulk of the card's content.")
+function ChallengeDetail() {
+    const { detail } = useContext(ChallengeContext);
+    const accept = async () => {
+        try {
+            console.log(detail.id, detail.title);
+            await axios.patch(`${apiURL}/post/accept/${detail.id}`)
+                .then(() => { window.location.assign('../home') })
+                .catch(err => console.log(err))
+        } catch (error) {
+            return error;
+        }
+    }
     return (
         <div>
             <div id='main-content'>
                 <div className='container col-md-10'>
                     <div id='challenge-name'>
-                        {challengeName}
+                        {detail.title}
                     </div>
                     <nav aria-label="breadcrumb">
                         <ol className="breadcrumb">
@@ -27,32 +32,26 @@ function ChallengeDetail(props) {
                     </nav>
                     <div>
                         <label className='font-weight-bold'>Creator: </label>
-                        <span> {username}</span>
+                        <span> {detail.creator}</span>
                     </div>
                     <div>
-                        <label className='font-weight-bold'>Date created: </label>
-                        <span> {challengeDateStart}</span>
+                        <label className='font-weight-bold'>Starting date: </label>
+                        <span> {new Date(detail.date).getDate() + '-' + (new Date(detail.date).getMonth() + 1) + '-' + new Date(detail.date).getFullYear()}</span>
                     </div>
 
                     <div>
-                        <label className='font-weight-bold'>End date: </label>
-                        <span> {challengeDateEnd}</span>
+                        <label className='font-weight-bold'>Endind date: </label>
+                        <span> {new Date(detail.dayEnd).getDate() + '-' + (new Date(detail.dayEnd).getMonth() + 1) + '-' + new Date(detail.dayEnd).getFullYear()}</span>
                     </div>
                     <div>
                         <label className='font-weight-bold'>Description: </label>
-                        <p id='challenge-description' className='text-justify'>
-                            {challengeDescription}
-                        </p>
-                    </div>
-                    <div>
-                        <label className='font-weight-bold'>
-                            Data description:
-                        </label>
-                        <p className='text-justify'>
-                            {challengeDataDetail}
-                        </p>
+                        <span id='challenge-description' className='text-justify ml-3'>
+                            {detail.description}
+                        </span>
                     </div>
                     <button onClick={() => navigate("../challengejoined")} className='btn btn-primary' type='submit'>Enroll</button>
+                    <p></p>
+                    {detail.status === false ? (<button onClick={accept} style={{ position: "relative", left: "50%", top: "70%" }} className="btn btn-warning btn-status">Accept</button>) : ''}
                 </div>
             </div>
 

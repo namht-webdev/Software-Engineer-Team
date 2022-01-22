@@ -1,13 +1,16 @@
-import {useState, useEffect} from 'react'
+import {useState, useEffect, useContext} from 'react'
 import './challengecard.css'
 import { useNavigate, Link } from 'react-router-dom'
 import cpp from '../../assets/cpp.png'
 import python from '../../assets/python.png'
 import java from '../../assets/java.png'
 import js from '../../assets/js.png'
+import {ChallengeContext} from '../../contexts/challengeContext'
 
 
 function ChallengeCard(props) {
+    
+    const {setDetail} = useContext(ChallengeContext);
     const navigate = useNavigate()
     const [language, setLanguage] = useState();
     useEffect(() =>{
@@ -24,6 +27,8 @@ function ChallengeCard(props) {
             setLanguage(cpp)
         }
     },[]);
+
+
 
     return (
         <div className="challenge-card mt-4">
@@ -43,7 +48,8 @@ function ChallengeCard(props) {
 
                 </div>
                 <div className="text-center" style={{backgroundColor: "#242730", borderRadius: "0 0 20px 20px"}}>
-                    <button onClick={() => navigate("challengedetail")} className="btn btn-primary">View</button>
+                    <button onClick={() => {setDetail(props); navigate("../challengedetail", {replace: false})}} className="btn btn-primary">View</button>
+                    
                 </div>
             </div>
         </div>

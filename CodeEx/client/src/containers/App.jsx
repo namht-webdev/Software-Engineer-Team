@@ -9,8 +9,9 @@ import NotFound from "../components/notfound/Noufound";
 import AuthContextProvider from "../contexts/authContext";
 import Login from "../components/login/Login";
 import Userinfo from "../components/userinfo/Userinfo";
-import ChallengeCard from "../components/challengecard/ChallengeCard";
 import ChallengeContextProvider from "../contexts/challengeContext";
+import MyChallenge from "../components/myChallenge/myChallenge";
+import Waiting from "../components/waitingChallenge/waiting";
 import Challenge from "../components/challenge/Challenge";
 function App() {
     return (
@@ -30,7 +31,8 @@ function App() {
                         <Route path="challengejoined" element={<ChallengeJoined />} />
                         <Route path="user" element={<Navigate replace to="info" />} />
                         <Route path="user/info" element={<Userinfo />} />
-                        <Route path="user/challenge" element={<ChallengeCard />} />
+                        <Route path="user/challenge" element={<MyChallenge />} />
+                        <Route path="waiting" element={<Waiting />} />
                     </Route>
 
                     <Route path="*" element={<NotFound />} />
