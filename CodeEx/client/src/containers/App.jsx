@@ -3,7 +3,7 @@ import ChallengeDetail from "../components/challengeDetail/ChallengeDetail";
 import ChallengeJoined from "../components/challengeJoined/challengeJoined";
 import CreateChallenge from "../components/createChallenge/createChallenge";
 import Home from "./home/Home";
-import { BrowserRouter as Router, Routes, Route, Outlet, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Signup from "../components/signup/Signup";
 import NotFound from "../components/notfound/Noufound";
 import AuthContextProvider from "../contexts/authContext";
@@ -21,7 +21,6 @@ function App() {
                     <Route exact path="/signup" element={<Signup />} />
 
                     <Route exact path="/home/*" element={<Home />}>
-                        {/* <Challenge /> */}
                         <Route path="" element={<Challenge />} />
                         <Route path="challengedetail" element={<ChallengeDetail />} />
                         <Route path="createchallenge" element={<CreateChallenge />} />
