@@ -9,8 +9,10 @@ const PostSchema = new Schema({
     dayEnd: {type: Date},
     type: {type: String, required: true},
     description: {type: String, default:''},
+    result: {type: Number, required: true},
     numberVote: {type: Number},
     numberTakeIn: {type: Number},
+    status: {type: Boolean, default: false}
 }, {
     timestamps: true,
 })
