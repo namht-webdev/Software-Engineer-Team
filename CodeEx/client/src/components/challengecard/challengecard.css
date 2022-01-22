@@ -13,3 +13,8 @@
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
+.btn-status{
+    width: 150px;
+    height: 50px;
+}

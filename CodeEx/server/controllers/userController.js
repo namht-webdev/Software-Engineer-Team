@@ -103,7 +103,7 @@ class UserController {
                 maxAge: 3600 * 24 * 1000 * 7
             })
 
-            return res.json({ message: 'Login success!', success: true, userId: user._id });
+            return res.json({ message: 'Login success!', success: true, userId: user._id, username:user.username });
         } catch (error) {
             return res.status(500).json({ error: error.message });
 

@@ -1,5 +1,5 @@
 const Post = require('../models/postModel');
-
+const User = require('../models/userModel');
 class PostController {
     async index(req, res, next) {
         try {
@@ -15,13 +15,13 @@ class PostController {
     }
 
     async my_challenge(req, res, next) {
-        const {userId} = req.body;
+        const {id} = {... req.params};
         try {
-            const post = await Post.find({userId});
+            const post = await Post.find({userId:id});
             if(post.length === 0) {
                 return res.status(200).json({success: false, message: 'No post found'});
             }
-            return res.status(200).json({success: true, data: post});
+            return res.status(200).json({success: true, post});
         } catch (error) {
             return res.status(500).json({success: false, message: 'Internal Server Error'});
         }
@@ -33,7 +33,17 @@ class PostController {
             if(post.length === 0) {
                 return res.status(200).json({success: false, message: 'No post found'});
             }
-            return res.status(200).json({success: true, data: post});
+            return res.status(200).json({success: true, post});
+        } catch (error) {
+            return res.status(500).json({success: false, message: 'Internal Server Error'});
+        }
+    }
+
+    async accept(req, res, next) {
+        const {id} = {... req.params};
+        try {
+            const post = await Post.findOneAndUpdate({_id: id}, {status: true});
+            return res.status(200).json({success: true});
         } catch (error) {
             return res.status(500).json({success: false, message: 'Internal Server Error'});
         }
@@ -45,7 +55,8 @@ class PostController {
             if(!title || !type || !dayStart || !dayEnd|| !result || !description){
                 return res.status(200).json({success: false, message: 'You have to enter a title and type of this challenge'});
             }
-            const newPost = new Post({userId, title, type, dayStart, dayEnd, result, description});
+            const user = await User.findOne({_id: userId});
+            const newPost = new Post({userId, title, type, dayStart, dayEnd, result, description, username: user.username});
             await newPost.save();
             return res.status(200).json({success: true, message: 'Your challenge is created successfully'});
         } catch (error) {

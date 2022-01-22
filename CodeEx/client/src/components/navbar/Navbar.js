@@ -1,11 +1,9 @@
 import React from "react"
 import "./navbar.css"
-import { Nav } from "react-bootstrap";
 import { useNavigate, withRouter } from "react-router";
 import { Link } from "react-router-dom";
+const username = localStorage.getItem("username");
 import codeExlogo from "../../assets/Logo_W.png"
-
-const username = "CodeEx"
 function Navbar() {
     const navigate = useNavigate();
     const openMenu = () => {

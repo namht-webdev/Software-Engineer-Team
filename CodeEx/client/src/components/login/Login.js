@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import './login.css'
 import GGlogo from "../../assets/gg_logo.png"
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import codeExlogo from "../../assets/Logo_W.png"
 import { AuthContext } from '../../contexts/authContext';
 import { Spinner } from 'react-bootstrap';
@@ -11,7 +11,6 @@ function Login() {
     const { login } = useContext(AuthContext);
     const [message, setMessage] = useState('');
     const [spinner, setSpinner] = useState(false)
-    const redirect = useNavigate();
     const [infor, setInfor] = useState({
         email: '',
         password: '',
@@ -42,7 +41,8 @@ function Login() {
                     if (res.data.success === true) {
 
                         localStorage.setItem('userId', res.data.userId);
-                        redirect('/home');
+                        localStorage.setItem('username', res.data.username);
+                        window.location.assign("/home")
                     }
                     else {
                         setSpinner(false);

@@ -7,7 +7,8 @@ function Challenge() {
     return (
         <div className="container">
             <div className="row">
-                {challenges.map((challenge, index) => {
+                {
+                challenges !== undefined && (challenges.map((challenge, index) => {
                     return (
                         <div key={index} className="col-3">
                             <ChallengeCard
@@ -16,10 +17,14 @@ function Challenge() {
                                 numberTakeIn={challenge.numberTakeIn}
                                 numberVote={challenge.numberVote}
                                 type={challenge.type}
+                                creator={challenge.username}
+                                date={challenge.dayStart}
+                                dayEnd={challenge.dayEnd}
+                                id={challenge._id}
                             />
                         </div>
                     )
-                })}
+                }))}
             </div>
         </div>
     )
