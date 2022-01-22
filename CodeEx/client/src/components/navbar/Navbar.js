@@ -38,12 +38,12 @@ function Navbar() {
                         <button type="button" className="btn btn-outline-info" onClick={() => navigate("user")}>{username}</button>
                         <button type="button" className="btn btn-info dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="false" aria-expanded="true"></button>
                         <div className="dropdown-menu dropdown-menu-right">
-                            <button className="dropdown-item btn" href="#"><i className="fa fa-user-circle-o"></i> Profile</button>
-                            <button className="dropdown-item btn" href="#"><i className="fa fa-cog"></i> Setting</button>
-                            <button className="dropdown-item btn" href="#"><i className="fa fa-key"></i> Password</button>
-                            <button className="dropdown-item btn" href="#"><i className="fa fa-archive"></i> My challenge</button>
-                            <button className="dropdown-item btn" href="#"><i className="fa fa-lock"></i> Lock account</button>
-                            <button className="dropdown-item btn" href="#"><i className="fa fa-sign-out"></i> Log out</button>
+                            <button className="dropdown-item btn"><i className="fa fa-user-circle-o"></i> Profile</button>
+                            <button className="dropdown-item btn"><i className="fa fa-cog"></i> Setting</button>
+                            <button className="dropdown-item btn"><i className="fa fa-key"></i> Password</button>
+                            <button className="dropdown-item btn"><i className="fa fa-archive"></i> My challenge</button>
+                            <button className="dropdown-item btn"><i className="fa fa-lock"></i> Lock account</button>
+                            <button className="dropdown-item btn"><i className="fa fa-sign-out"></i> Log out</button>
                         </div>
                     </div>
                 </div>

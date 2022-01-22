@@ -1,11 +1,13 @@
 import React, { useContext, useEffect } from 'react'
 import './challengedetail.css'
+import {useNavigate} from 'react-router-dom'
 import { ChallengeContext } from '../../contexts/challengeContext'
 import axios from 'axios';
 import { apiURL } from '../../contexts/constants';
 
 function ChallengeDetail() {
     const { detail } = useContext(ChallengeContext);
+    const navigate = useNavigate()
     const accept = async () => {
         try {
             console.log(detail.id, detail.title);
