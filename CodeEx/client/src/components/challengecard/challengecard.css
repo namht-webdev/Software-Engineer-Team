@@ -3,5 +3,13 @@
 }
 
 .challenge-card{
-    margin-bottom: 0.5vh;
+    width: 300px;
+    height: 500px;
+    border-radius: 50px;
+}
+
+.card-body, .card-text, .card-title{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }

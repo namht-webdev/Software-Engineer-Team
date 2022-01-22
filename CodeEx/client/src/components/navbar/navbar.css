@@ -12,8 +12,8 @@
     top: 0;
     margin-bottom: 4vh;
     margin-top: 0.5vh;
-
-    z-index: 1;
+    margin-left: -20px;
+    z-index: 5;
 }
 
 

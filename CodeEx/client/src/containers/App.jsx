@@ -10,30 +10,36 @@ import AuthContextProvider from "../contexts/authContext";
 import Login from "../components/login/Login";
 import Userinfo from "../components/userinfo/Userinfo";
 import ChallengeCard from "../components/challengecard/ChallengeCard";
+import ChallengeContextProvider from "../contexts/challengeContext";
 import Challenge from "../components/challenge/Challenge";
+import Policy from "./policy/Policy";
 function App() {
     return (
         <AuthContextProvider>
-            <Router>
-                <Routes>
-                    <Route path="/" element={<Navigate replace to="/login" />} />
-                    <Route exact path="/login" element={<Login />} />
-                    <Route exact path="/signup" element={<Signup />} />
+            <ChallengeContextProvider>
+                <Router>
+                    <Routes>
+                        <Route exact path="/" element={<Navigate replace to="/login" />} />
+                        <Route exact path="/login" element={<Login />} />
+                        <Route exact path="/signup" element={<Signup />} />
 
-                    <Route exact path="/home/*" element={<Home />}>
-                        <Route path="" element={<Challenge />} />
-                        <Route path="challengedetail" element={<ChallengeDetail />} />
-                        <Route path="createchallenge" element={<CreateChallenge />} />
-                        <Route path="challengejoined" element={<ChallengeJoined />} />
-                        <Route path="user" element={<Navigate replace to="info" />} />
-                        <Route path="user/info" element={<Userinfo />} />
-                        <Route path="user/challenge" element={<ChallengeCard />} />
-                    </Route>
+                        <Route exact path="home" element={<Home />}>
+                            {/* <Challenge /> */}
+                            <Route path="" element={<Challenge />} />
+                            <Route path="challengedetail" element={<ChallengeDetail />} />
+                            <Route path="createchallenge" element={<CreateChallenge />} />
+                            <Route path="challengejoined" element={<ChallengeJoined />} />
+                            <Route path="user" element={<Navigate replace to="info" />} />
+                            <Route path="user/info" element={<Userinfo />} />
+                            <Route path="user/challenge" element={<ChallengeCard />} />
+                            <Route path="policy" element={<Policy />} />
+                        </Route>
 
-                    <Route path="*" element={<NotFound />} />
-                </Routes>
+                        <Route path="*" element={<NotFound />} />
+                    </Routes>
 
-            </Router>
+                </Router>
+            </ChallengeContextProvider>
         </AuthContextProvider>
     )
 }

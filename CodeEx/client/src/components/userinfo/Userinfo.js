@@ -1,23 +1,28 @@
 import { Link, useNavigate } from "react-router-dom";
 import ChallengeCard from "../challengecard/ChallengeCard";
-
+import img from '../../assets/imgcr.png';
+import ava from '../../assets/ava.png';
 import "./userinfo.css"
 function Userinfo() {
     const navigate = useNavigate();
     return (
         <div id="userinfo">
+            <div id="ava">
+                <img className="avaimg" src={ava} />
+                <p className="pncr">Nguyễn Văn CodeEx</p>
+            </div>
             <div className="container-fluid row">
-                <nav className="">
+                {/* <nav className="">
                     <ol className="breadcrumb">
                         <li className="breadcrumb-item active" aria-current="page" ><Link to="../user/info" style={{ color: "black" }}>Profile</Link></li>
                         <li className="breadcrumb-item"><Link to="../user/challenge" style={{ color: "black" }}>Challenge</Link></li>
                     </ol>
-                </nav>
-                <div className="col-md-6">
+                </nav> */}
+                <div className="col-md-6" id="info">
                     <table className="table table-dark">
                         <tr>
                             <td>Username</td>
-                            <td>CodeEx</td>
+                            <td>Nguyễn Văn CodeEx</td>
                             <td><i class="fa fa-cog" aria-hidden="true"></i></td>
                         </tr>
                         <tr>
@@ -44,7 +49,11 @@ function Userinfo() {
                 </div>
 
             </div>
-            <ChallengeCard />
+            <div id="challenge">
+                <p>My Challenge</p>
+                <ChallengeCard />
+            </div>
+
         </div>
     )
 }
