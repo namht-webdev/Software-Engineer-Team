@@ -49,11 +49,6 @@ function Userinfo() {
                 </div>
 
             </div>
-            <div id="challenge">
-                <p>My Challenge</p>
-                <ChallengeCard />
-            </div>
-
         </div>
     )
 }
