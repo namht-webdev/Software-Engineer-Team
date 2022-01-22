@@ -1,6 +1,7 @@
 import React from "react";
 import "./footer.css"
 import codeExlogo from "../../assets/Logo_W.png"
+import { Link } from "react-router-dom";
 function Footer() {
     return (
         <footer id="footer" className="footer">
@@ -12,7 +13,8 @@ function Footer() {
                     <div>
                         <span>Copyright 2021 CodeEx</span>
                         <br />
-                        <a href="#" style={{ color: 'white' }}>Privacy Policy</a>
+                        <Link to={"/home/policy"} style={{ color: 'white' }}>Privacy Policy</Link>
+
                     </div>
                 </div>
                 <div className="col-md-3">

@@ -4,7 +4,6 @@ import { useNavigate, withRouter } from "react-router";
 import { Link } from "react-router-dom";
 const username = localStorage.getItem("username");
 import codeExlogo from "../../assets/Logo_W.png"
-
 function Navbar() {
     const navigate = useNavigate();
     const openMenu = () => {
@@ -35,10 +34,10 @@ function Navbar() {
                 </div>
                 <div className="col-md-1 row">
                     <div className="btn-group">
-                        <button type="button" className="btn btn-outline-info" onClick={() => navigate("user")}>{username}</button>
-                        <button type="button" className="btn btn-info dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="false" aria-expanded="true"></button>
+                        <button type="button" className="btn btn-outline-dark" onClick={() => navigate("user")}>{username}</button>
+                        <button type="button" className="btn btn-dark dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="false" aria-expanded="true"></button>
                         <div className="dropdown-menu dropdown-menu-right">
-                            <button className="dropdown-item btn" href="#"><i className="fa fa-user-circle-o"></i> Profile</button>
+                            <button className="dropdown-item btn" href="#" onClick={() => navigate("user")}><i className="fa fa-user-circle-o"></i> Profile</button>
                             <button className="dropdown-item btn" href="#"><i className="fa fa-cog"></i> Setting</button>
                             <button className="dropdown-item btn" href="#"><i className="fa fa-key"></i> Password</button>
                             <button className="dropdown-item btn" href="#"><i className="fa fa-archive"></i> My challenge</button>

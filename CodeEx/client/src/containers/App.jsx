@@ -13,16 +13,16 @@ import ChallengeContextProvider from "../contexts/challengeContext";
 import MyChallenge from "../components/myChallenge/myChallenge";
 import Waiting from "../components/waitingChallenge/waiting";
 import Challenge from "../components/challenge/Challenge";
+import Policy from "./policy/Policy";
 function App() {
     return (
         <AuthContextProvider>
             <ChallengeContextProvider>
                 <Router>
                     <Routes>
-                    <Route exact path="/" element={<Navigate replace to="/login" />} />
-                    <Route exact path="/login" element={<Login />} />
-                    <Route exact path="/signup" element={<Signup />} />
-
+                        <Route exact path="/" element={<Navigate replace to="/login" />} />
+                        <Route exact path="/login" element={<Login />} />
+                        <Route exact path="/signup" element={<Signup />} />
                     <Route exact path="home" element={<Home />}>
                         {/* <Challenge /> */}
                         <Route path="" element={<Challenge />} />
@@ -33,9 +33,11 @@ function App() {
                         <Route path="user/info" element={<Userinfo />} />
                         <Route path="user/challenge" element={<MyChallenge />} />
                         <Route path="waiting" element={<Waiting />} />
+                          <Route path="policy" element={<Policy />} />
                     </Route>
 
-                    <Route path="*" element={<NotFound />} />
+
+                        <Route path="*" element={<NotFound />} />
                     </Routes>
 
                 </Router>
