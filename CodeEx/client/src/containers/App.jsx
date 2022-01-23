@@ -29,7 +29,7 @@ function App() {
                         <Route path="challengedetail" element={<ChallengeDetail />} />
                         <Route path="createchallenge" element={<CreateChallenge />} />
                         <Route path="challengejoined" element={<ChallengeJoined />} />
-                        <Route path="user" element={<Navigate replace to="info" />} />
+                        {/* <Route path="user" element={<Navigate />} /> */}
                         <Route path="user/info" element={<Userinfo />} />
                         <Route path="user/challenge" element={<MyChallenge />} />
                         <Route path="waiting" element={<Waiting />} />
