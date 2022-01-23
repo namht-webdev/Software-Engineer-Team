@@ -36,5 +36,13 @@
 <body>
     <div id="root"></div>
 </body>
+<script>
+    window.onmessage = function (e) {
+        if (e.data && e.data.language) {
+            console.log(e.data)
+            // handle the e.data which contains the code object
+        }
+    };
+</script>
 
 </html>

@@ -1,3 +1,6 @@
+import Footer from '../footer/Footer';
+import Navbar from '../navbar/Navbar';
+import { Link, useNavigate } from 'react-router-dom';
 import { useState, useContext } from 'react';
 import { ChallengeContext } from '../../contexts/challengeContext'
 import './createChallenge.css';
@@ -44,14 +47,14 @@ function CreateChallenge() {
 
             try {
                 const response = await create(challenge);
-                if(response.status === 200) {
+                if (response.status === 200) {
                     setSpinner(true);
-                    if(response.data.success) {
+                    if (response.data.success) {
                         alert('Your challenge was created successfully!');
                         window.location.assign("/home");
                     }
                 }
-                
+
             } catch (error) {
                 return response;
             }
@@ -100,9 +103,9 @@ function CreateChallenge() {
                         <input onChange={getInforChallenge} name="result" type="text" id='challengeOutputDes' className='form-control input-field' />
                     </div>
                     {spinner && (
-                            <Spinner animation="border" role="status">
-                                <span className="visually-hidden">Loading...</span>
-                            </Spinner>)}
+                        <Spinner animation="border" role="status">
+                            <span className="visually-hidden">Loading...</span>
+                        </Spinner>)}
                     <p className="text-center text-danger fw-bold">{message}</p>
                     <button onClick={createChallenge} type='submit' className='btn btn-primary btncr mb-4'>
                         Create

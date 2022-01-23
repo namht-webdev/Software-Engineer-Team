@@ -1,0 +1,30 @@
+#policy-header{
+    font-size: 3.5em;
+    font-weight: bold;
+    border: solid;
+    border-radius: 8px;
+    border-width: 2px;
+    height: auto;
+    color: white;
+    background-image: url("../../assets/imgcr.png");
+}
+
+.content{
+    border: solid;
+    border-radius: 8px;
+    border-width: 2px;
+    margin: 2vh 2vw 2vh 2vw;
+}
+
+.ptext{
+    margin: 1vh 2vw 2vh 2vw;
+}
+
+label{
+    margin: 1vh 0 1vh 2vw;
+}
+
+#main-contents{
+    font-size: 1.1em;
+    margin: 0 8vw 0 8vw;
+}
